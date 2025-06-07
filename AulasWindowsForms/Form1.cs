@@ -14,16 +14,17 @@ namespace AulasWindowsForms
         }
         private void BtnDivisao_Click(object sender, EventArgs e)
         {
-            try { 
-            int dividendo = Convert.ToInt32(txtDividendo.Text);
-            int divisor = Convert.ToInt32(txtDivisor.Text);
-            if (divisor == 0)
+            try
+            {
+                int dividendo = Convert.ToInt32(txtDividendo.Text);
+                int divisor = Convert.ToInt32(txtDivisor.Text);
+                if (divisor == 0)
                 {
                     throw new DivideByZeroException();
                 }
-            Calculadora calculadora = new Calculadora();
-            int resto = calculadora.Resto(dividendo, divisor);
-            txtResto.Text = resto.ToString();
+                Calculadora calculadora = new Calculadora();
+                int resto = calculadora.Resto(dividendo, divisor);
+                txtResto.Text = resto.ToString();
             }
             catch (FormatException)
             {
